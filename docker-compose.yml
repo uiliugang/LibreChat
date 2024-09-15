@@ -38,7 +38,6 @@ services:
       - ./images:/app/client/public/images
       - ./logs:/app/api/logs
       - ./librechat.yaml:/app/librechat.yaml
-      - ./client/dist:/app/client/dist   # 编译打包上传
 
   mongodb:
     container_name: chat-mongodb

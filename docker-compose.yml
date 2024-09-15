@@ -4,12 +4,12 @@
 # Refer to `docker-compose.override.yaml.example’ for some sample configurations.
 
 # TODO 修改权限
+# npm run frontend
 # sudo chmod -R 777 LibreChat/
 # sudo chown -R lighthouse LibreChat/
 # docker exec -ti LibreChat sh
 # npm run create-user
-#  npm install --no-audit;
-# npm run frontend
+
 
 services:
   api:
@@ -38,7 +38,7 @@ services:
       - ./images:/app/client/public/images
       - ./logs:/app/api/logs
       - ./librechat.yaml:/app/librechat.yaml
-      - ./client:/app/client   # 方便修改 web app 信息
+      - ./client/dist:/app/client/dist   # 编译打包上传
 
   mongodb:
     container_name: chat-mongodb
